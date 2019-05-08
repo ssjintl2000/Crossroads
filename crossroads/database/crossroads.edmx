@@ -1,0 +1,433 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Churches">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CAddress" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CCity" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CState" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="CZipCode" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="CPhone" Type="varchar" MaxLength="10" />
+          <Property Name="CWebsite" Type="varchar" MaxLength="100" />
+          <Property Name="PTName" Type="varchar" MaxLength="100" />
+          <Property Name="Logo" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Services">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="ServiceDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="ServiceTitle" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ServiceScripture" Type="varchar" MaxLength="100" />
+          <Property Name="ServicePDF" Type="varchar" MaxLength="100" />
+          <Property Name="ServiceNotes" Type="varchar" MaxLength="1000" />
+          <Property Name="Baptism" Type="bit" Nullable="false" />
+          <Property Name="Communion" Type="bit" Nullable="false" />
+          <Property Name="Rehearsal" Type="bit" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ChurchId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ServiceSongs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="ServiceId" Type="int" Nullable="false" />
+          <Property Name="SongId" Type="int" Nullable="false" />
+          <Property Name="SongLeadUser" Type="int" />
+          <Property Name="SongPosition" Type="varchar" MaxLength="50" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ServiceUnavailable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="ServiceId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="Notes" Type="varchar" MaxLength="500" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ServiceUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="ServiceId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Songs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Title" Type="varchar" MaxLength="100" />
+          <Property Name="Artist" Type="varchar" MaxLength="100" />
+          <Property Name="Notes" Type="varchar" MaxLength="500" />
+          <Property Name="MP3" Type="varchar" MaxLength="100" />
+          <Property Name="Track" Type="varchar" MaxLength="100" />
+          <Property Name="PDF" Type="varchar" MaxLength="100" />
+          <Property Name="Lyrics" Type="varchar" MaxLength="2500" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ChurchId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SongsWishList">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Status" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="PType" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="100" />
+          <Property Name="Artist" Type="varchar" MaxLength="100" />
+          <Property Name="Link" Type="varchar" MaxLength="100" />
+          <Property Name="Notes" Type="varchar" MaxLength="1000" />
+          <Property Name="DateRequested" Type="date" Nullable="false" />
+          <Property Name="Requestor" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ChurchId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserLogin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="UName" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="UPass" Type="varchar" MaxLength="1024" Nullable="false" />
+          <Property Name="USecLevel" Type="int" Nullable="false" />
+          <Property Name="LastLogin" Type="smalldatetime" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="UName" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="FName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="100" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="State" Type="varchar" MaxLength="2" />
+          <Property Name="ZipCode" Type="varchar" MaxLength="5" />
+          <Property Name="Phone" Type="varchar" MaxLength="10" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="UGender" Type="varchar" MaxLength="1" />
+          <Property Name="UType" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="UVocalist" Type="bit" Nullable="false" />
+          <Property Name="UPosition" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UPrimary" Type="bit" Nullable="false" />
+          <Property Name="UStatus" Type="varchar" MaxLength="1" />
+          <Property Name="CreatedDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="UpdatedDate" Type="smalldatetime" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ChurchId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="modelStoreContainer">
+          <EntitySet Name="Churches" EntityType="Self.Churches" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Services" EntityType="Self.Services" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ServiceSongs" EntityType="Self.ServiceSongs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ServiceUnavailable" EntityType="Self.ServiceUnavailable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ServiceUsers" EntityType="Self.ServiceUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Songs" EntityType="Self.Songs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SongsWishList" EntityType="Self.SongsWishList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserLogin" EntityType="Self.UserLogin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Church">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CCity" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CState" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="CZipCode" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CPhone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CWebsite" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PTName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Logo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="ServiceDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ServiceTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ServiceScripture" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ServicePDF" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ServiceNotes" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Baptism" Type="Boolean" Nullable="false" />
+          <Property Name="Communion" Type="Boolean" Nullable="false" />
+          <Property Name="Rehearsal" Type="Boolean" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ChurchId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ServiceSong">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="ServiceId" Type="Int32" Nullable="false" />
+          <Property Name="SongId" Type="Int32" Nullable="false" />
+          <Property Name="SongLeadUser" Type="Int32" />
+          <Property Name="SongPosition" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="ServiceUnavailable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="ServiceId" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="Notes" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="ServiceUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="ServiceId" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Song">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Artist" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Notes" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="MP3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Track" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PDF" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Lyrics" Type="String" MaxLength="2500" FixedLength="false" Unicode="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ChurchId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SongsWishList">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Status" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PType" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Artist" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Link" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Notes" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="DateRequested" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Requestor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ChurchId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserLogin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="UName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UPass" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="USecLevel" Type="Int32" Nullable="false" />
+          <Property Name="LastLogin" Type="DateTime" Precision="0" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="UName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="ZipCode" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UGender" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="UType" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UVocalist" Type="Boolean" Nullable="false" />
+          <Property Name="UPosition" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UPrimary" Type="Boolean" Nullable="false" />
+          <Property Name="UStatus" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="0" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ChurchId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Churches" EntityType="Self.Church" />
+          <EntitySet Name="Services" EntityType="Self.Service" />
+          <EntitySet Name="ServiceSongs" EntityType="Self.ServiceSong" />
+          <EntitySet Name="ServiceUnavailables" EntityType="Self.ServiceUnavailable" />
+          <EntitySet Name="ServiceUsers" EntityType="Self.ServiceUser" />
+          <EntitySet Name="Songs" EntityType="Self.Song" />
+          <EntitySet Name="SongsWishLists" EntityType="Self.SongsWishList" />
+          <EntitySet Name="UserLogins" EntityType="Self.UserLogin" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="modelStoreContainer" CdmEntityContainer="entities">
+          <EntitySetMapping Name="Churches">
+            <EntityTypeMapping TypeName="model.Church">
+              <MappingFragment StoreEntitySet="Churches">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CName" ColumnName="CName" />
+                <ScalarProperty Name="CAddress" ColumnName="CAddress" />
+                <ScalarProperty Name="CCity" ColumnName="CCity" />
+                <ScalarProperty Name="CState" ColumnName="CState" />
+                <ScalarProperty Name="CZipCode" ColumnName="CZipCode" />
+                <ScalarProperty Name="CPhone" ColumnName="CPhone" />
+                <ScalarProperty Name="CWebsite" ColumnName="CWebsite" />
+                <ScalarProperty Name="PTName" ColumnName="PTName" />
+                <ScalarProperty Name="Logo" ColumnName="Logo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Services">
+            <EntityTypeMapping TypeName="model.Service">
+              <MappingFragment StoreEntitySet="Services">
+                <ScalarProperty Name="ServiceDate" ColumnName="ServiceDate" />
+                <ScalarProperty Name="ServiceTitle" ColumnName="ServiceTitle" />
+                <ScalarProperty Name="ServiceScripture" ColumnName="ServiceScripture" />
+                <ScalarProperty Name="ServicePDF" ColumnName="ServicePDF" />
+                <ScalarProperty Name="ServiceNotes" ColumnName="ServiceNotes" />
+                <ScalarProperty Name="Baptism" ColumnName="Baptism" />
+                <ScalarProperty Name="Communion" ColumnName="Communion" />
+                <ScalarProperty Name="Rehearsal" ColumnName="Rehearsal" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ChurchId" ColumnName="ChurchId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ServiceSongs">
+            <EntityTypeMapping TypeName="model.ServiceSong">
+              <MappingFragment StoreEntitySet="ServiceSongs">
+                <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+                <ScalarProperty Name="SongId" ColumnName="SongId" />
+                <ScalarProperty Name="SongLeadUser" ColumnName="SongLeadUser" />
+                <ScalarProperty Name="SongPosition" ColumnName="SongPosition" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ServiceUnavailables">
+            <EntityTypeMapping TypeName="model.ServiceUnavailable">
+              <MappingFragment StoreEntitySet="ServiceUnavailable">
+                <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ServiceUsers">
+            <EntityTypeMapping TypeName="model.ServiceUser">
+              <MappingFragment StoreEntitySet="ServiceUsers">
+                <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Songs">
+            <EntityTypeMapping TypeName="model.Song">
+              <MappingFragment StoreEntitySet="Songs">
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Artist" ColumnName="Artist" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="MP3" ColumnName="MP3" />
+                <ScalarProperty Name="Track" ColumnName="Track" />
+                <ScalarProperty Name="PDF" ColumnName="PDF" />
+                <ScalarProperty Name="Lyrics" ColumnName="Lyrics" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ChurchId" ColumnName="ChurchId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SongsWishLists">
+            <EntityTypeMapping TypeName="model.SongsWishList">
+              <MappingFragment StoreEntitySet="SongsWishList">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="PType" ColumnName="PType" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Artist" ColumnName="Artist" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="DateRequested" ColumnName="DateRequested" />
+                <ScalarProperty Name="Requestor" ColumnName="Requestor" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ChurchId" ColumnName="ChurchId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserLogins">
+            <EntityTypeMapping TypeName="model.UserLogin">
+              <MappingFragment StoreEntitySet="UserLogin">
+                <ScalarProperty Name="UName" ColumnName="UName" />
+                <ScalarProperty Name="UPass" ColumnName="UPass" />
+                <ScalarProperty Name="USecLevel" ColumnName="USecLevel" />
+                <ScalarProperty Name="LastLogin" ColumnName="LastLogin" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="model.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="UName" ColumnName="UName" />
+                <ScalarProperty Name="FName" ColumnName="FName" />
+                <ScalarProperty Name="LName" ColumnName="LName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="UGender" ColumnName="UGender" />
+                <ScalarProperty Name="UType" ColumnName="UType" />
+                <ScalarProperty Name="UVocalist" ColumnName="UVocalist" />
+                <ScalarProperty Name="UPosition" ColumnName="UPosition" />
+                <ScalarProperty Name="UPrimary" ColumnName="UPrimary" />
+                <ScalarProperty Name="UStatus" ColumnName="UStatus" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ChurchId" ColumnName="ChurchId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DB_A3B8A7_SSJ" Class="crossroadsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=SQL7002.site4now.net;Initial Catalog=DB_A3B8A7_SSJ;Persist Security Info=True;User ID=DB_A3B8A7_SSJ_admin" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DB_A3B8A7_SSJConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Churches" Member="Churches">
+    <Type Name="Church">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CAddress" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CCity" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CState" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="CZipCode" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="CPhone" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="CWebsite" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PTName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Logo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Services" Member="Services">
+    <Type Name="Service">
+      <Column Name="ServiceDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ServiceTitle" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ServiceScripture" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ServicePDF" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ServiceNotes" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Baptism" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Communion" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Rehearsal" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ChurchId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ServiceSongs" Member="ServiceSongs">
+    <Type Name="ServiceSong">
+      <Column Name="ServiceId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SongId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SongLeadUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SongPosition" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ServiceUnavailable" Member="ServiceUnavailables">
+    <Type Name="ServiceUnavailable">
+      <Column Name="ServiceId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ServiceUsers" Member="ServiceUsers">
+    <Type Name="ServiceUser">
+      <Column Name="ServiceId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Songs" Member="Songs">
+    <Type Name="Song">
+      <Column Name="Title" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Artist" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="MP3" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Track" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PDF" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Lyrics" Type="System.String" DbType="VarChar(2500)" CanBeNull="true" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ChurchId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SongsWishList" Member="SongsWishLists">
+    <Type Name="SongsWishList">
+      <Column Name="Status" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="PType" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Artist" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Link" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="DateRequested" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Requestor" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ChurchId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserLogin" Member="UserLogins">
+    <Type Name="UserLogin">
+      <Column Name="UName" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="UPass" Type="System.String" DbType="VarChar(1024) NOT NULL" CanBeNull="false" />
+      <Column Name="USecLevel" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LastLogin" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="UName" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="FName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="ZipCode" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UGender" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="UType" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="UVocalist" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="UPosition" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UPrimary" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="UStatus" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ChurchId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

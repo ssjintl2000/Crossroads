@@ -1,0 +1,175 @@
+﻿.serviceContent {
+    width: 100%;
+    background-color: rgba(200,200,200,.5);
+    border: 2px solid rgba(50,50,50,.5);
+}
+
+.serviceServices {
+}
+
+    .serviceServices > div {
+        margin-left: -15px;
+    }
+
+input[type="radio"] {
+    display: inline-block;
+    margin-top: 2px;
+}
+
+.serviceContent a {
+    color: rgba(0,0,0,0.5);
+    text-decoration: none;
+    margin: 5px 15px 0px 0px;
+}
+
+    .serviceContent a:hover {
+        color: rgba(255,255,0,0.5);
+        text-decoration: none;
+    }
+
+.serviceSectionHeader {
+    display: block;
+    border-bottom: 1px solid black;
+    font-size: 1.75em;
+    color: rgba(50,50,50,.75);
+}
+
+.serviceSong > select {
+    border-radius: 5px;
+    padding: 3px;
+    background-color: rgba(250,250,250,.85);
+}
+
+.serviceContentHeader {
+    float: left;
+    font-size: 2em;
+    color: #600;
+}
+
+.serviceContentActions {
+    display: block;
+    text-align: right;
+    padding-top: 15px;
+}
+
+.serviceContentActionsLarge {
+    display: block;
+    text-align: right;
+    padding-top: 10px;
+    font-size: 1.2em;
+}
+
+.serviceVocalists,
+.serviceMusicians,
+.serviceTechnicians {
+    margin-top: -20px;
+}
+
+    .serviceVocalists > tbody > tr > td > label,
+    .serviceMusicians > tbody > tr > td > label,
+    .serviceTechnicians > tbody > tr > td > label,
+    .serviceVocalists > tbody > tr > td > span > label,
+    .serviceMusicians > tbody > tr > td > span > label,
+    .serviceTechnicians > tbody > tr > td > span > label {
+        font-weight: normal;
+        display: block;
+        margin-left: 20px;
+        margin-top: -22px;
+    }
+
+.aspNetDisabled > label {
+    opacity: 0.5;
+    text-decoration-line: line-through;
+}
+
+.note {
+    font-size: .9em;
+    font-style: italic;
+    color: rgba(50,50,50,0.75);
+    margin: 0px 10px;
+}
+
+.serviceListing {
+    background-color: rgba(200,200,200,.75);
+}
+
+    .serviceListing > thead {
+        background-color: rgba(80,80,80,.5);
+        font-size: 1.1em;
+        font-weight: bold;
+    }
+
+        .serviceListing > thead > tr > td:first-child {
+            width: 25px;
+            text-align: center;
+        }
+
+    .serviceListing > tbody > tr > td {
+        font-size: 1em;
+    }
+
+    .serviceListing > thead > tr > td:first-child {
+        text-align: center;
+        margin: 0 0;
+    }
+
+    .serviceListing > tbody > tr > td > a {
+        color: rgba(0,0,0,0.5);
+        text-decoration: none;
+        margin: 0 0;
+    }
+
+        .serviceListing > tbody > tr > td > a:hover {
+            color: #000;
+            text-decoration: none;
+            margin: 0 0;
+        }
+
+.serviceForm {
+    padding: 20px;
+    background-color: rgba(220,220,220,.5);
+    border: 2px solid #444;
+    border-radius: 20px;
+    box-shadow: 1px 1px 20px rgba(100,100,100,.5);
+}
+
+.serviceFormHeader {
+    font-size: 1.25em;
+    color: #900;
+    padding: 5px 0px;
+    border-bottom: 2px solid #444;
+    margin-bottom: 10px;
+}
+
+.btnContainer {
+    border-top: 2px solid #444;
+    padding-top: 15px;
+}
+
+.response {
+    padding: 30px;
+    background-color: rgba(220,220,220,.5);
+    border: 2px solid #444;
+    border-radius: 10px;
+    box-shadow: 1px 1px 20px rgba(100,100,100,.5);
+}
+
+/*****[ Media Queries ]*****/
+@media (max-width: 768px) {
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+}
+
+@media (min-width: 1440px) {
+}
+
+@media only screen (min-device-width : 414px) and (max-device-width : 736px) {
+}
+/*****[ IPhone 6  ]*****/
+@media only screen (min-device-width : 375px) and (max-device-width : 667px) {
+}
+/*****[ IPhone 6+ ]*****/

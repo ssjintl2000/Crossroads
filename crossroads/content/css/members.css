@@ -1,0 +1,130 @@
+﻿.memberContent {
+    width: 100%;
+    background-color: rgba(200,200,200,.5);
+    border: 2px solid rgba(50,50,50,.5);
+}
+
+    .memberContent a {
+        color: rgba(0,0,0,0.5);
+        text-decoration: none;
+        margin: 5px 15px 0px 0px;
+    }
+
+        .memberContent a:hover {
+            color: rgba(255,255,0,0.5);
+            text-decoration: none;
+        }
+
+.memberContentHeader {
+    float: left;
+    font-size: 2em;
+    color: #600;
+}
+
+.tableHeader {
+    /*background: rgba(255,255,255,0.2);*/
+    color: rgba(0,0,0,0.5);
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+.memberContentActions {
+    display: block;
+    text-align: right;
+    padding-top: 15px;
+}
+
+.memberContentActionsLarge {
+    display: block;
+    text-align: right;
+    padding-top: 10px;
+    font-size: 1.2em;
+}
+
+.memberListing {
+    background-color: rgba(200,200,200,.35);
+}
+}
+
+.memberListing > thead > tr > td:first-child {
+    width: 20px;
+    text-align: center;
+}
+
+.memberListing > thead > tr > td {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.memberListing > tbody > tr > td {
+    font-size: 1em;
+}
+
+    .memberListing > tbody > tr > td.note {
+        font-size: .85em;
+        font-style: italic;
+        color: rgba(100,0,0,0.65);
+    }
+
+.memberListing > tbody > tr.uActive {
+    background: rgba(0,100,0,0.2);
+}
+
+.memberListing > tbody > tr.uInActive {
+    background: rgba(100,0,0,0.2);
+}
+
+.memberForm {
+    background: rgba(200,200,200,0.5);
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 1px 1px 15px rgba(0,0,0,0.5);
+}
+
+.memberFormHeader {
+    font-weight: bolder;
+    font-size: 1.25em;
+    border-bottom: 2px solid rgba(0,0,0,0.5);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+    .memberFormHeader a {
+        font-size: .75em;
+    }
+
+.btnContainer {
+    border-top: 2px solid rgba(0,0,0,0.5);
+    padding-top: 5px;
+}
+
+.updateButton {
+    margin-top: 10px;
+    width: 200px;
+}
+
+.formError {
+    padding: 0px 20px;
+    color: rgba(200,0,0,0.5);
+}
+
+/*****[ Media Queries ]*****/
+@media (max-width: 768px) {
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+}
+
+@media (min-width: 1440px) {
+}
+
+@media only screen (min-device-width : 414px) and (max-device-width : 736px) {
+}
+/*****[ IPhone 6  ]*****/
+@media only screen (min-device-width : 375px) and (max-device-width : 667px) {
+}
+/*****[ IPhone 6+ ]*****/

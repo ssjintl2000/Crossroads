@@ -1,0 +1,66 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="master.master.cs" Inherits="crossroads.master.master" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>Crossroads</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/content/css/master.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body style="visibility: hidden;" onload="js_load()">
+    <div class="topbanner">
+        <asp:ContentPlaceHolder ID="headercontent" runat="server" />
+    </div>
+
+    <div id="mainmenu" runat="server" class="mainmenu" visible="false">
+        <ul>
+            <li><a href="/main.aspx">Home</a></li>
+            <li id="menuServices" runat="server"><a href="/services.aspx">Services</a></li>
+            <li id="menuSongs" runat="server"><a href="/songs.aspx">Songs</a></li>
+            <li id="menuMembers" runat="server"><a href="/members.aspx">Members</a></li>
+            <li id="menuAvailability" runat="server"><a href="/availability.aspx">Availability</a></li>
+            <li id="menuWishList" runat="server"><a href="/wishlist.aspx">Wish List</a></li>
+            <li>
+                <a href="/changepassword.aspx">Change Password</a>&nbsp; &nbsp;
+                <a href="/logoff.aspx">Logoff</a>
+            </li>
+        </ul>
+    </div>
+
+    <form id="form1" runat="server">
+        <div id="logincontainer" class="logincontent" runat="server">
+            <asp:ContentPlaceHolder ID="logincontent" runat="server" />
+        </div>
+        <div id="maincontainer" class="maincontent" runat="server">
+            <asp:ContentPlaceHolder ID="maincontent" runat="server" />
+        </div>
+    </form>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script>
+        function js_load() {
+            document.body.style.visibility = 'visible';
+        }
+
+        function winOpen(URL, PAGE, W, H, S, B, R) {
+            if (W == "" || W == 0) {
+                W = (screen.width - (screen.width / 2.5))
+            }
+
+            if (H == "" || H == 0) {
+                H = (screen.height - (screen.height / 2.5))
+            }
+
+            var T = ((screen.height - H) / 2) - 50
+            var L = (screen.width - W) / 2
+
+            window.open(URL, PAGE, "top=" + T + ",height=" + H + ",width=" + W + ",left=" + L + ",status=1,scrollbars=" + S + ",resizable=" + R + ",toolbar=" + B)
+        }
+    </script>
+</body>
+</html>

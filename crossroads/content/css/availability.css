@@ -1,0 +1,179 @@
+﻿.availabilityContent {
+    background-color: rgba(200,200,200,.5);
+    border: 2px solid rgba(50,50,50,.5);
+}
+
+    .availabilityContent a {
+        display: inline-block;
+        font-size: 1.5em;
+        color: #333;
+        text-decoration: none;
+        margin: 5px 15px 0px 0px;
+    }
+
+        .availabilityContent a:hover {
+            color: rgba(255,255,0,0.5);
+            text-decoration: none;
+        }
+
+.availabilityContentHeader {
+    float: left;
+    font-size: 2em;
+    color: #600;
+}
+
+.availabilityContentActions {
+    display: block;
+    text-align: right;
+    padding-top: 15px;
+}
+
+    .availabilityContentActions a {
+        font-size: 1em;
+    }
+
+.availabilityHeaderLink {
+    font-size: 1em !important;
+    color: rgba(0,0,0,0.5);
+    padding-top: 10px !important;
+}
+
+.availabilityServiceDate {
+    font-size: 1.25em;
+    border-bottom: 2px solid #555;
+}
+
+.table > tbody > tr > td,
+.table > tbody > tr > th {
+    border: none !important;
+}
+
+.availabilityServiceUsers {
+    background-color: rgba(200,200,200,0.5);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-bottom: 25px !important;
+}
+
+    .availabilityServiceUsers a {
+        text-decoration: none;
+    }
+
+        .availabilityServiceUsers a:hover {
+            color: rgba(255,255,0,0.5);
+            text-decoration: none;
+        }
+
+.availabilityUpdateContainer {
+    background-color: rgba(200,200,200,.5);
+    border: 2px solid rgba(50,50,50,.5);
+}
+
+.availabilityUpdateHeader {
+    font-size: 2em;
+    color: #600;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #555;
+    margin-bottom: 10px;
+}
+
+.availabilityUpdateListing {
+    margin-top: 10px;
+    border-top: solid 2px #555;
+    padding-top: 10px;
+}
+
+.availabilitUpdateTable {
+    width: 100%;
+}
+
+.availabilitUpdateTableHeader {
+    background-color: rgba(100,100,100,0.5);
+    padding: 5px;
+}
+
+.availabilitUpdateTableBody > tr > td label {
+    font-weight: normal;
+}
+
+.availabilityUpdateError {
+}
+
+.availabilityUpdateErrorHeader {
+    color: #600;
+    font-size: 1.5em;
+}
+
+.availabilityUpdateError a {
+    color: rgba(0,0,0,0.5);
+}
+
+    .availabilityUpdateError a:hover {
+        color: rgba(255,255,0,0.5);
+    }
+
+.availabilityUpdateButton {
+    border-top: 2px solid #555;
+}
+
+.availabilityServiceUsers a {
+    font-size: 1em;
+    margin-top: 0px !important;
+}
+
+/*****[ Media Queries ]*****/
+@media (max-width: 768px) {
+    .availabilityContentHeader {
+        font-size: 1.25em;
+    }
+
+    .availabilityContent a {
+        font-size: 1.1em;
+        margin: 2px 5px 0px 0px;
+    }
+
+    .availabilityServiceDate {
+        font-size: 1.15em;
+    }
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+}
+
+@media (min-width: 1440px) {
+}
+
+@media only screen (min-device-width : 414px) and (max-device-width : 736px) {
+    .availabilityContentHeader {
+        font-size: 1.25em;
+    }
+
+    .availabilityContent a {
+        font-size: 1.1em;
+        margin: 2px 5px 0px 0px;
+    }
+
+    .availabilityServiceDate {
+        font-size: 1.15em;
+    }
+}
+/*****[ IPhone 6  ]*****/
+@media only screen (min-device-width : 375px) and (max-device-width : 667px) {
+    .availabilityContentHeader {
+        font-size: 1.25em;
+    }
+
+    .availabilityContent a {
+        font-size: 1.1em;
+        margin: 2px 5px 0px 0px;
+    }
+
+    .availabilityServiceDate {
+        font-size: 1.15em;
+    }
+}
+/*****[ IPhone 6+ ]*****/
+

@@ -1,0 +1,141 @@
+﻿.songContent {
+    width: 100%;
+    background-color: rgba(200,200,200,.5);
+    border: 2px solid rgba(50,50,50,.5);
+}
+
+    .songContent a {
+        color: rgba(0,0,0,0.5);
+        text-decoration: none;
+        margin: 5px;
+    }
+
+        .songContent a:hover {
+            color: rgba(255,255,0,0.75);
+            text-decoration: none;
+        }
+
+.songContentHeader {
+    float: left;
+    font-size: 2em;
+    color: #600;
+}
+
+.songContentActions {
+    display: block;
+    text-align: right;
+    padding-top: 15px;
+}
+
+.songContentActionsLarge {
+    display: block;
+    text-align: right;
+    padding-top: 10px;
+    font-size: 1.2em;
+}
+
+.songListing {
+    background-color: rgba(255,255,255,.5);
+}
+
+    .songListing > thead {
+        background-color: rgba(80,80,80,.5);
+        font-size: 1.1em;
+        font-weight: bold;
+    }
+
+        .songListing > thead > tr > td:first-child {
+            width: 25px;
+            text-align: center;
+        }
+
+    .songListing > tbody > tr > td {
+        font-size: 1em;
+    }
+
+.songLetter {
+    margin: -5px;
+    background-color: rgba(255,255,255,0.5);
+    padding: 10px;
+    font-size: 28px;
+    font-weight: bolder;
+}
+
+.songGoBack {
+    margin: -5px;
+    background-color: rgba(150,150,150,0.5);
+    padding: 10px;
+}
+
+.note {
+    font-size: .9em;
+    font-style: italic;
+    color: rgba(50,50,50,0.75);
+    margin: 0px 10px;
+}
+
+.songListing > thead > tr > td:first-child {
+    text-align: center;
+    margin: 0 0;
+}
+
+.songListing > tbody > tr > td > a {
+    color: rgba(0,0,0,0.5);
+    text-decoration: none;
+    margin: 0 0;
+}
+
+    .songListing > tbody > tr > td > a:hover {
+        color: #444;
+        text-decoration: none;
+        margin: 0 0;
+    }
+
+.songForm {
+    padding: 20px;
+    background-color: rgba(220,220,220,.5);
+    border: 2px solid #444;
+    border-radius: 20px;
+    box-shadow: 1px 1px 20px rgba(100,100,100,.5);
+}
+
+.songFormHeader {
+    font-size: 1.25em;
+    color: #900;
+    padding: 5px 0px;
+    border-bottom: 2px solid #444;
+    margin-bottom: 10px;
+}
+
+.btnContainer {
+    border-top: 2px solid #444;
+    padding-top: 15px;
+}
+
+.response {
+    padding: 30px;
+    background-color: rgba(220,220,220,.5);
+    border: 2px solid #444;
+    border-radius: 10px;
+    box-shadow: 1px 1px 20px rgba(100,100,100,.5);
+}
+
+/*****[ Media Queries ]*****/
+@media (max-width: 768px) {
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+}
+
+@media (min-width: 1440px) {
+}
+
+@media only screen (min-device-width : 414px) and (max-device-width : 736px) {
+}
+/*****[ IPhone 6  ]*****/
+@media only screen (min-device-width : 375px) and (max-device-width : 667px) {
+}
+/*****[ IPhone 6+ ]*****/

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 12.5" name="crossroads">
+  <DataContextMoniker Name="/crossroadsDataContext" />
+  <nestedChildShapes>
+    <classShape Id="633cd4a0-55d9-42d0-a44f-a8531db12855" absoluteBounds="0.75, 0.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/crossroadsDataContext/Church" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5690a007-991d-451a-90b1-33ab0359fa46" absoluteBounds="0.765, 1.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="21a8dae6-53cb-470e-b9eb-e682e9800c29" absoluteBounds="3.75, 0.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/crossroadsDataContext/Service" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b88a8852-e479-4841-83cc-26425c39559e" absoluteBounds="3.765, 1.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5e12e76d-e96f-4055-aa63-ddc520a20618" absoluteBounds="0.75, 4.75, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/crossroadsDataContext/ServiceSong" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ff7dcfbd-9553-4eda-b65b-dc84d1140890" absoluteBounds="0.765, 5.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7f792b25-765f-4916-83e6-8eeda495173a" absoluteBounds="3.75, 4.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/crossroadsDataContext/ServiceUnavailable" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2722cc73-9700-4d95-9241-dd35e2eae274" absoluteBounds="3.765, 5.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4cb67431-86d6-4e5d-b962-1bf6bc5da321" absoluteBounds="6.75, 0.75, 2, 1.3862939453125003">
+      <DataClassMoniker Name="/crossroadsDataContext/ServiceUser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a0351e0d-37d8-4f81-a64d-c594ace3c69e" absoluteBounds="6.765, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8031702c-c627-4217-a326-c7ebb1a0e63a" absoluteBounds="6.75, 3.75, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/crossroadsDataContext/Song" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4d6a3bee-cef2-40c4-8876-dff1f9e4e225" absoluteBounds="6.765, 4.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="360c127e-6a5b-41de-bab4-fcd3ffc60bbb" absoluteBounds="0.75, 7.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/crossroadsDataContext/SongsWishList" />
+      <nestedChildShapes>
+        <elementListCompartment Id="02c2a87b-7ce3-4061-b9d3-2df833ea3427" absoluteBounds="0.765, 8.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3cf1fbbb-af67-4b72-8642-a7fd4a8758e6" absoluteBounds="3.75, 7.75, 2, 1.7708968098958335">
+      <DataClassMoniker Name="/crossroadsDataContext/UserLogin" />
+      <nestedChildShapes>
+        <elementListCompartment Id="994ee8d8-333b-4e5e-ac8d-743ab2d665d1" absoluteBounds="3.765, 8.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="27ce0980-4bb6-4105-8637-661e42474838" absoluteBounds="6.75, 7.75, 2, 4.4631168619791666">
+      <DataClassMoniker Name="/crossroadsDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2f62b55f-99d0-43c9-b380-a4a2c3bd097e" absoluteBounds="6.765, 8.21, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

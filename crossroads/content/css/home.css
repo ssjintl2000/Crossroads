@@ -1,0 +1,244 @@
+﻿.servicecontent {
+    background-color: rgba(200,200,200,.5);
+    border: 2px solid rgba(50,50,50,.5);
+    padding: 10px;
+}
+
+.servicecontentHeader {
+    font-size: 1.25em;
+    font-weight: bolder;
+}
+
+.servicecontent a {
+    text-decoration: none;
+    color: rgba(0,0,0,0.5);
+}
+
+    .servicecontent a:hover {
+        color: #000;
+        font-weight: bolder;
+    }
+
+.servicesongs {
+    background-color: rgba(200,200,200,.5);
+    border: 2px solid rgba(50,50,50,.5);
+    padding: 10px;
+    margin: 5px 0px;
+}
+
+.servicesongsHeader {
+    font-size: 1.25em;
+    font-weight: bolder;
+}
+
+.servicesongstable thead tr {
+    background-color: rgba(0,0,0,0.35);
+    padding: 5px;
+}
+
+.servicesongstable tbody tr {
+    background-color: rgba(255,255,255,0.5);
+    padding: 5px;
+}
+
+td.songsMP3,
+td.songsPDF,
+td.songsTRACK {
+    width: 150px;
+}
+
+.servicesongstable tbody tr a {
+    font-size: 1.1em;
+    color: rgba(0,0,0,.5);
+    text-decoration: none;
+}
+
+.servicesongstable tbody tr span {
+    font-size: .75em;
+}
+
+.servicesongstable tbody tr a:hover {
+    color: rgba(255,255,0,0.5);
+}
+
+.servicemembers {
+    background-color: rgba(200,200,200,.5);
+    border: 2px solid rgba(50,50,50,.5);
+    padding: 10px 0px;
+    margin: 5px 0px;
+}
+
+.servicemembersHeader {
+    background-color: transparent;
+    font-size: 1.25em;
+    font-weight: bolder;
+}
+
+.servicemembersListing {
+    background-color: rgba(200,200,200,0.50);
+    padding: 15px;
+}
+
+.servicemembersleft {
+}
+
+.unavailablevocalistscontainer,
+.unavailablemusicianscontainer,
+.unavailabletechnicianscontainer {
+    color: #600;
+}
+
+.availabilitycontent {
+    background-color: rgba(200,200,200,.5);
+    border: 2px solid rgba(50,50,50,.5);
+    padding: 10px;
+    text-align: center;
+}
+
+    .availabilitycontent a {
+        color: rgba(0,0,0,.5);
+        font-size: 1.5em;
+        text-decoration: none;
+    }
+
+        .availabilitycontent a:hover {
+            color: rgba(255,255,0,.5);
+        }
+
+.membercontent {
+    background-color: rgba(200,200,200,.5);
+    margin: 5px 0px;
+}
+
+    .membercontent a {
+        color: rgba(0,0,0,.5);
+        text-decoration: none;
+    }
+
+.membersHeader {
+    font-size: 1.25em;
+    font-weight: bolder;
+    padding-top: 10px;
+}
+
+.membersMoreInfo {
+    margin: 5px 0px;
+}
+
+.memberDetails {
+    border: none;
+    background-color: #FED;
+    padding: 10px;
+}
+
+.memberEmail {
+    clear: both;
+    text-align: center;
+    border-top: 1px solid #EEE;
+    padding: 10px;
+}
+
+    .memberEmail a:hover {
+        color: rgba(255,255,0,.5);
+    }
+
+/*****[ Media Queries ]*****/
+@media (max-width: 768px) {
+    .servicecontentHeader,
+    .servicesongsHeader,
+    .servicemembersHeader {
+        font-size: 1.10em;
+        font-weight: bolder;
+    }
+
+    td.songsMP3,
+    td.songsPDF,
+    td.songsTRACK {
+        width: 50px;
+    }
+
+    .servicesongstable tbody tr {
+        font-size: .85em;
+    }
+
+        .servicesongstable tbody tr a {
+            font-size: 1.0em;
+        }
+
+    .servicemembers {
+        font-size: .85em;
+    }
+
+    .availabilitycontent {
+        font-size: .75em;
+    }
+
+    .membersHeader {
+        font-size: .85em;
+        font-weight: bolder;
+        padding-top: 10px;
+    }
+
+    .membersMoreInfo {
+        margin-top: 5px;
+        font-size: .85em;
+    }
+
+    .membercontent {
+        margin: 3px 0px;
+        font-size: .8em;
+    }
+}
+
+@media (min-width: 992px) {
+    td.songsMP3,
+    td.songsPDF,
+    td.songsTRACK {
+        width: 50px;
+    }
+
+    .servicesongs a {
+        font-size: .95em;
+    }
+}
+
+@media (min-width: 1200px) {
+    td.songsMP3,
+    td.songsPDF,
+    td.songsTRACK {
+        width: 60px;
+    }
+}
+
+@media (min-width: 1440px) {
+    td.songsMP3,
+    td.songsPDF,
+    td.songsTRACK {
+        width: 125px;
+    }
+}
+
+@media only screen (min-device-width : 414px) and (max-device-width : 736px) {
+    td.songsMP3,
+    td.songsPDF,
+    td.songsTRACK {
+        width: 50px;
+    }
+
+    .servicesongs a {
+        font-size: .85em;
+    }
+}
+/*****[ IPhone 6  ]*****/
+@media only screen (min-device-width : 375px) and (max-device-width : 667px) {
+    td.songsMP3,
+    td.songsPDF,
+    td.songsTRACK {
+        width: 50px;
+    }
+
+    .servicesongs a {
+        font-size: .85em;
+    }
+}
+/*****[ IPhone 6+ ]*****/
