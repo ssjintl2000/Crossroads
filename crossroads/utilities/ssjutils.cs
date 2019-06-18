@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.IO;
 using System.Net.Mail;
 using System.Security.Cryptography;
@@ -54,7 +55,7 @@ namespace Crossroads.utilities
 
             client.Host = "mail.ssjhost.com";
             client.Port = 25;
-            client.Credentials = new System.Net.NetworkCredential("mike@ssjhost.com", "M0nday))");
+            client.Credentials = new System.Net.NetworkCredential("mike@ssjhost.com", ConfigurationManager.AppSettings["adminEmailPassword"]);
             client.EnableSsl = false;
             try
             {
