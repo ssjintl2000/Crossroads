@@ -43,12 +43,19 @@ namespace Crossroads
             sbv.AppendLine("  </tr>");
             sbv.AppendLine("</thead>");
             sbv.AppendLine("<tbody>");
-            foreach (var user in vocalists)
+            foreach (User user in vocalists)
             {
-                var lDate = cdc.UserLogins.FirstOrDefault(a => a.UName == user.UName).LastLogin;
+                var lDate = cdc.UserLogins.FirstOrDefault(a => a.UName == user.UName);
                 sbv.AppendLine("<tr class='" + ((user.UStatus == "A") ? "uActive" : "uInActive") + "'>");
                 sbv.AppendLine("  <td>" + ((user.UPrimary) ? "**" : "") + "</td>");
-                sbv.AppendLine("  <td title='Last Login: " + Convert.ToDateTime(lDate).ToString("f") + "'>");
+                if (lDate != null)
+                {
+                    sbv.AppendLine("  <td title='Last Login: " + Convert.ToDateTime(lDate.LastLogin).ToString("f") + "'>");
+                }
+                else
+                {
+                    sbv.AppendLine("  <td>");
+                }
                 sbv.AppendLine("    <a href='memberdetails.aspx?id=" + user.Id + "'>" + user.FName + " " + user.LName + "</a>");
                 sbv.AppendLine("  </td>");
                 sbv.AppendLine("  <td>" + user.UPosition + "</td>");
@@ -77,12 +84,19 @@ namespace Crossroads
             sbm.AppendLine("  </tr>");
             sbm.AppendLine("</thead>");
             sbm.AppendLine("<tbody>");
-            foreach (var user in musicians)
+            foreach (User user in musicians)
             {
-                var lDate = cdc.UserLogins.FirstOrDefault(a => a.UName == user.UName)?.LastLogin;
+                var lDate = cdc.UserLogins.FirstOrDefault(a => a.UName == user.UName);
                 sbm.AppendLine("<tr class='" + ((user.UStatus == "A") ? "uActive" : "uInActive") + "'>");
                 sbm.AppendLine("  <td>" + ((user.UPrimary) ? "**" : "") + "</td>");
-                sbm.AppendLine("  <td title='Last Login: " + Convert.ToDateTime(lDate).ToString("f") + "'>");
+                if (lDate != null)
+                {
+                    sbm.AppendLine("  <td title='Last Login: " + Convert.ToDateTime(lDate.LastLogin).ToString("f") + "'>");
+                }
+                else
+                {
+                    sbm.AppendLine("  <td>");
+                }
                 sbm.AppendLine("    <a href='memberdetails.aspx?id=" + user.Id + "'>" + user.FName + " " + user.LName + "</a>");
                 sbm.AppendLine("  </td>");
                 sbm.AppendLine("  <td>" + user.UPosition + "</td>");
@@ -111,12 +125,19 @@ namespace Crossroads
             sbt.AppendLine("  </tr>");
             sbt.AppendLine("</thead>");
             sbt.AppendLine("<tbody>");
-            foreach (var user in technicians)
+            foreach (User user in technicians)
             {
-                var lDate = cdc.UserLogins.FirstOrDefault(a => a.UName == user.UName).LastLogin;
+                var lDate = cdc.UserLogins.FirstOrDefault(a => a.UName == user.UName);
                 sbt.AppendLine("<tr class='" + ((user.UStatus == "A") ? "uActive" : "uInActive") + "'>");
                 sbt.AppendLine("  <td>" + ((user.UPrimary) ? "**" : "") + "</td>");
-                sbt.AppendLine("  <td title='Last Login: " + Convert.ToDateTime(lDate).ToString("f") + "'>");
+                if (lDate != null)
+                {
+                    sbt.AppendLine("  <td title='Last Login: " + Convert.ToDateTime(lDate.LastLogin).ToString("f") + "'>");
+                }
+                else
+                {
+                    sbt.AppendLine("  <td>");
+                }
                 sbt.AppendLine("    <a href='memberdetails.aspx?id=" + user.Id + "'>" + user.FName + " " + user.LName + "</a>");
                 sbt.AppendLine("  </td>");
                 sbt.AppendLine("  <td>" + user.UPosition + "</td>");
