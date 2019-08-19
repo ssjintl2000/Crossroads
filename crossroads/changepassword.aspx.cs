@@ -2,6 +2,7 @@
 using Crossroads.utilities;
 
 using System;
+using System.Configuration;
 using System.Linq;
 using System.Web.UI;
 
@@ -43,7 +44,7 @@ namespace Crossroads
                             frmInput.Visible = false;
                             frmButton.Visible = false;
 
-                            ssjutils.SendEmail("mike@ssjhost.com", "mike@ssjhost.com", "User Password Changed", userlogin.UName + ": " + txtNPWD.Text);
+                            ssjutils.SendEmail(ConfigurationManager.AppSettings["adminEmail"], ConfigurationManager.AppSettings["adminEmail"], "User Password Changed", userlogin.UName + ": " + txtNPWD.Text);
 
                             lblResponse.Text = "Password Successfully Changed";
                             pnlResponse.Visible = true;

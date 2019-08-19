@@ -2,6 +2,7 @@
 using Crossroads.utilities;
 
 using System;
+using System.Configuration;
 using System.Linq;
 using System.Web.UI.WebControls;
 
@@ -207,7 +208,7 @@ namespace Crossroads
                 string sRec = "";
                 foreach (var user in userlogins)
                 {
-                    if (ssjutils.SendEmail("mike@ssjhost.com", cdc.Users.FirstOrDefault(a => a.UName == user.UName).Email, "Website Updates", sInfo))
+                    if (ssjutils.SendEmail(ConfigurationManager.AppSettings["adminEmail"], cdc.Users.FirstOrDefault(a => a.UName == user.UName).Email, "Website Updates", sInfo))
                     {
                         pnlResponse.Visible = true;
                     }

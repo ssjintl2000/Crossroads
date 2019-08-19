@@ -3,6 +3,7 @@ using Crossroads.utilities;
 
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Web.UI;
@@ -882,7 +883,7 @@ namespace Crossroads
                         foreach (var em in emailList)
                         {
                             sResp += "<div style='margin: 0px 10px'>" + em.Substring(em.IndexOf("|") + 1) + "</div>";
-                            ssjutils.SendEmail("mike@ssjhost.com", em.Substring(0, em.IndexOf("|")), "Upcoming Service Lineup: " + Convert.ToDateTime(svcDate.Text + " " + svcTime.Text), sInfo);
+                            ssjutils.SendEmail(ConfigurationManager.AppSettings["adminEmail"], em.Substring(0, em.IndexOf("|")), "Upcoming Service Lineup: " + Convert.ToDateTime(svcDate.Text + " " + svcTime.Text), sInfo);
                         }
                     }
 

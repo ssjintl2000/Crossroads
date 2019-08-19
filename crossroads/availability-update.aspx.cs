@@ -1,6 +1,7 @@
 ﻿using Crossroads.database;
 using Crossroads.utilities;
 using System;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Web.UI;
@@ -141,7 +142,7 @@ namespace Crossroads
                     var users = cdc.Users.Where(a => a.UType == "V" || a.UType == "M" || a.UType == "T" || a.UType == "S").ToList();
                     foreach (var user in users)
                     {
-                        if (ssjutils.SendEmail("mike@ssjhost.com", user.Email, "Church Service Availability", sInfo))
+                        if (ssjutils.SendEmail(ConfigurationManager.AppSettings["adminEmail"], user.Email, "Church Service Availability", sInfo))
                         {
                             pnlResponse.Visible = true;
                         }
