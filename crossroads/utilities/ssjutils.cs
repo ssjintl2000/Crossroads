@@ -55,7 +55,7 @@ namespace Crossroads.utilities
 
             client.Host = "mail.ssjhost.com";
             client.Port = 25;
-            client.Credentials = new System.Net.NetworkCredential("mike@ssjhost.com", ConfigurationManager.AppSettings["adminEmailPassword"]);
+            client.Credentials = new System.Net.NetworkCredential(ConfigurationManager.AppSettings["adminEmail"], ConfigurationManager.AppSettings["adminEmailPassword"]);
             client.EnableSsl = false;
             try
             {
@@ -73,15 +73,15 @@ namespace Crossroads.utilities
             catch (Exception ex)
             {
                 var errorMsg = new MailMessage();
-                errorMsg.From = new MailAddress("mike@ssjhost.com");
-                errorMsg.To.Add(new MailAddress("mike@ssjhost.com"));
+                errorMsg.From = new MailAddress(ConfigurationManager.AppSettings["adminEmail"]);
+                errorMsg.To.Add(new MailAddress(ConfigurationManager.AppSettings["adminEmail"]));
                 errorMsg.Subject = "SMTPError";
                 errorMsg.Body = ex.InnerException.ToString();
 
                 var newClient = new SmtpClient();
                 newClient.Host = "mail.ssjhost.com";
                 newClient.Port = 25;
-                newClient.Credentials = new System.Net.NetworkCredential("mike@ssjhost.com", "M0nday))");
+                newClient.Credentials = new System.Net.NetworkCredential(ConfigurationManager.AppSettings["adminEmail"], ConfigurationManager.AppSettings["adminEmailPassword"]);
                 newClient.EnableSsl = false;
 
                 newClient.Send(errorMsg);
