@@ -88,7 +88,7 @@ namespace Crossroads
                 {
                     if (Request.Form["SVC-" + service.Id] != null)
                     {
-                        // Remove all records form ServiceUsers and ServiceUnavailables for this user.
+                        // Remove all records from ServiceUsers and ServiceUnavailables for this user.
                         var AUser = cdc.ServiceUsers.FirstOrDefault(a => a.ServiceId == service.Id && a.UserId == Convert.ToInt32(Session["uid"]));
                         if (AUser != null)
                         {
