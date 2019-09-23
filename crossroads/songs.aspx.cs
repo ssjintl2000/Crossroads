@@ -26,8 +26,8 @@ namespace Crossroads
                 addSong.Visible = true;
             }
 
-            var futureSongs = cdc.ServiceSongs.Where(a => a.ServiceId >= Convert.ToInt32(Session["curserviceid"])).ToList();
-            var pastSongs = cdc.ServiceSongs.Where(a => a.ServiceId < Convert.ToInt32(Session["curserviceid"])).ToList();
+            var futureSongs = cdc.ServiceSongs.Where(a => a.ServiceId >= Convert.ToInt32(Session["curserviceid"])).OrderByDescending(a => a.ServiceId).ToList();
+            var pastSongs = cdc.ServiceSongs.Where(a => a.ServiceId < Convert.ToInt32(Session["curserviceid"])).OrderByDescending(a => a.ServiceId).ToList();
             var songs = cdc.Songs.Where(a => a.ChurchId == Convert.ToInt32(Session["churchid"])).OrderBy(a => a.Title).ToList();
 
             var sbs = new StringBuilder();
@@ -76,7 +76,7 @@ namespace Crossroads
                 var ssl = pastSongs.Find(a => a.SongId == song.Id);
                 if (ssl != null)
                 {
-                    dtServ = cdc.Services.FirstOrDefault(a => a.Id == ssl.ServiceId).ServiceDate;
+                    dtServ = cdc.Services.OrderByDescending(a=> a.ServiceDate).FirstOrDefault(a => a.Id == ssl.ServiceId).ServiceDate;
                     if (dtServ != null)
                     {
                         dLDate = dtServ.ToShortDateString();
