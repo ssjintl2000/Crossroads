@@ -107,6 +107,7 @@ namespace Crossroads
             {
                 var sUName = "";
                 var sInfo = "";
+                var sUId = 0;
 
                 if (Request.QueryString["id"] != null && Request.QueryString["id"] != "")
                 {
@@ -159,8 +160,10 @@ namespace Crossroads
                     #region Add New
 
                     sUName = inputFName.Value.Substring(0, 1) + inputLName.Value;
+                    sUId = Convert.ToInt32(cdc.Users.OrderByDescending(u => u.Id).FirstOrDefault().Id) + 1;
 
                     var newuser = new User();
+                    newuser.Id = sUId;
                     newuser.UName = sUName.ToLower();
                     newuser.FName = inputFName.Value;
                     newuser.LName = inputLName.Value;
