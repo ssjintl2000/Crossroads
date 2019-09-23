@@ -138,21 +138,21 @@ namespace Crossroads
                 sbsongs.AppendLine("    <td class='songsMP3 text-center'>");
                 if (!string.IsNullOrEmpty(songdetails.MP3))
                 {
-                    sbsongs.Append("<a href=Javascript:winOpen('/content/songs/mp3s/" + songdetails.MP3 + "','SONG',400,200,1,0,0) target='_blank'>Play</a>");
+                    sbsongs.Append("<a href=Javascript:winOpen('/content/songs/mp3s/" + songdetails.MP3 + "','SONG',400,200,0,0,0) target='_blank'>Play</a>");
                 }
 
                 sbsongs.AppendLine("    </td>");
                 sbsongs.AppendLine("    <td class='songsPDF text-center'>");
                 if (!string.IsNullOrEmpty(songdetails.PDF))
                 {
-                    sbsongs.Append("<a href=Javascript:winOpen('/content/songs/pdfs/" + songdetails.PDF + "','SHEET',0,0,1,1,0) target='_blank'>View</a>");
+                    sbsongs.Append("<a href=Javascript:winOpen('/content/songs/pdfs/" + songdetails.PDF + "','SHEET',800,600,1,1,1) target='_blank'>View</a>");
                 }
 
                 sbsongs.AppendLine("    </td>");
                 sbsongs.AppendLine("    <td class='songsTRACK text-center'>");
                 if (!string.IsNullOrEmpty(songdetails.Track))
                 {
-                    sbsongs.Append("<a href=Javascript:winOpen('/content/songs/tracks/" + songdetails.Track + "','TRACK',400,200,1,0,0) target='_blank'>Play</a>");
+                    sbsongs.Append("<a href=Javascript:winOpen('/content/songs/tracks/" + songdetails.Track + "','TRACK',400,150,0,0,0) target='_blank'>Play</a>");
                 }
 
                 sbsongs.AppendLine("    </td>");
