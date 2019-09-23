@@ -51,6 +51,14 @@
         margin-top: 0px !important;
     }
 
+.wishlistForm {
+    background: rgba(200,200,200,0.5);
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 1px 1px 15px rgba(0,0,0,0.5);
+}
+
 .M {
     background-color: rgba(0,200,200,0.2);
 }

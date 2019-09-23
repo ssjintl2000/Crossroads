@@ -33,7 +33,8 @@ namespace Crossroads
             sbs.AppendLine("<thead>");
             sbs.AppendLine("  <tr>");
             sbs.AppendLine("    <td>&nbsp;</td>");
-            sbs.AppendLine("    <td class='text-center' nowrap>Date Requested</td>");
+            sbs.AppendLine("    <td class='text-center' nowrap>&nbsp;Date Requested&nbsp;</td>");
+            sbs.AppendLine("    <td class='text-center' nowrap>Status</td>");
             sbs.AppendLine("    <td class='text-center' nowrap>Title</td>");
             sbs.AppendLine("    <td class='text-center' nowrap>Artist</td>");
             sbs.AppendLine("    <td class='text-center' nowrap>Type</td>");
@@ -47,6 +48,7 @@ namespace Crossroads
                 sbs.AppendLine("  <tr>");
                 sbs.AppendLine("    <td class='text-center'><a href='wishlistdetails.aspx?id=" + item.Id + "'>Edit</a></td>");
                 sbs.AppendLine("    <td class='text-center' nowrap>" + item.DateRequested.ToShortDateString() + "</td>");
+                sbs.AppendLine("    <td class='text-center' nowrap>&nbsp;" + ((item.Status.ToString() == "A") ? "<span style='color:#900'>Active</span>" : "<span style='color:#777'>Inactive</span>") + "&nbsp;</td>");
                 sbs.AppendLine("    <td class='text-left' nowrap><a href='" + item.Link + "' target='_blank'>" + item.Title + "</a></td>");
                 sbs.AppendLine("    <td class='text-left' nowrap>" + item.Artist + "</td>");
                 sbs.AppendLine("    <td class='text-center " + item.PType + "'>" + item.PType + "</td>");
