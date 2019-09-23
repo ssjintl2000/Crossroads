@@ -804,9 +804,9 @@ namespace Crossroads
                 #endregion Technicians
 
                 var sueList = cdc.ServiceUsers.Where(a => a.ServiceId == nServId).Select(a => a.UserId).ToList();
-                sueList.Add(16);
-                sueList.Add(22);
-                sueList.Add(27);
+                sueList.Add(16); //Kent
+                sueList.Add(27); //Tech Team
+                sueList.Add(1030); //Bulletin
 
                 #endregion Users
 
